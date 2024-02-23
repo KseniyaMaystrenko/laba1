@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+goods = {
+    'Лампа': '12345',
+    'Стол': '23456',
+    'Диван': '34567',
+    'Стул': '45678',
+}
+
+store = {
+    '12345': [
+        {'quantity': 27, 'price': 42},
+    ],
+    '23456': [
+        {'quantity': 22, 'price': 510},
+        {'quantity': 32, 'price': 520},
+    ],
+    '34567': [
+        {'quantity': 2, 'price': 1200},
+        {'quantity': 1, 'price': 1150},
+    ],
+    '45678': [
+        {'quantity': 50, 'price': 100},
+        {'quantity': 12, 'price': 95},
+        {'quantity': 43, 'price': 97},
+    ],
+}
+
+# Calculate the total value for each item in the store
+
+# Calculate and print total value of Lamps
+lamp_code = goods['Лампа']
+lamp_item = store[lamp_code][0]
+lamp_quantity = lamp_item['quantity']
+lamp_price = lamp_item['price']
+lamp_cost = lamp_quantity * lamp_price
+print('Лампа -', lamp_quantity, 'шт, стоимость', lamp_cost, 'руб')
+
+# Calculate and print total value of Tables
+table_code = goods['Стол']
+table_items = store[table_code]
+table_total_quantity = sum(item['quantity'] for item in table_items)
+table_total_cost = sum(item['quantity'] * item['price'] for item in table_items)
+print('Стол -', table_total_quantity, 'шт, стоимость', table_total_cost, 'руб')
+
+# Calculate and print total value of Sofas
+sofa_code = goods['Диван']
+sofa_items = store[sofa_code]
+sofa_total_quantity = sum(item['quantity'] for item in sofa_items)
+sofa_total_cost = sum(item['quantity'] * item['price'] for item in sofa_items)
+print('Диван -', sofa_total_quantity, 'шт, стоимость', sofa_total_cost, 'руб')
+
+# Calculate and print total value of Chairs
+chair_code = goods['Стул']
+chair_items = store[chair_code]
+chair_total_quantity = sum(item['quantity'] for item in chair_items)
+chair_total_cost = sum(item['quantity'] * item['price'] for item in chair_items)
+print('Стул -', chair_total_quantity, 'шт, стоимость', chair_total_cost, 'руб')
